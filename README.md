@@ -11,7 +11,7 @@
 
 * Summary of set up
 * Compile your SASS by running this command from your root project folder:
-- `sass --watch WG-bootstrapv3-template/stylesheets/sass:WG-bootstrapv3-template/stylesheets`
+- `sass --watch stylesheets/sass:stylesheets`
 * Dependencies
 * Database configuration
 * How to run tests
