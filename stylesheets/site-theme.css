@@ -1,3 +1,54 @@
+.glyphicon-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #888888;
+  border-radius: .1em; }
+
+.glyphicon-pull-left {
+  float: left; }
+
+.glyphicon-pull-right {
+  float: right; }
+
+.glyphicon.glyphicon-pull-left {
+  margin-right: .3em; }
+.glyphicon.glyphicon-pull-right {
+  margin-left: .3em; }
+
+.glyphicon-x1 {
+  font-size: 1em; }
+
+.glyphicon-x2 {
+  font-size: 2em; }
+
+.glyphicon-x3 {
+  font-size: 3em; }
+
+.glyphicon-x4 {
+  font-size: 4em; }
+
+.glyphicon-x5 {
+  font-size: 5em; }
+
+.glyphicon-x6 {
+  font-size: 6em; }
+
+.glyphicons-lg {
+  font-size: 1.5em; }
+
+.top-navigation {
+  width: 100%;
+  z-index: 1031; }
+
+.video-call-participants {
+  visibility: hidden; }
+  .video-call-participants.affix {
+    visibility: visible;
+    bottom: 0;
+    width: 100%; }
+  .video-call-participants [class^="container"] > .row > [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0; }
+
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -12,15 +63,15 @@
   transition: all 0.5s ease; }
 
 #wrapper.toggled {
-  padding-left: 250px; }
+  padding-left: 120px; }
 
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  left: 250px;
+  left: 120px;
   width: 0;
   height: 100%;
-  margin-left: -250px;
+  margin-left: -120px;
   overflow-y: auto;
   background: #000;
   -webkit-transition: all 0.5s ease;
@@ -29,7 +80,7 @@
   transition: all 0.5s ease; }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px; }
+  width: 120px; }
 
 #page-content-wrapper {
   width: 100%;
@@ -38,25 +89,25 @@
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -250px; }
+  margin-right: -120px; }
 
 /* Sidebar Styles */
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 120px;
   margin: 0;
   padding: 0;
   list-style: none; }
 
 .sidebar-nav li {
-  text-indent: 20px;
   line-height: 40px; }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999; }
+  color: #999999;
+  padding: 0 15px; }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
@@ -81,13 +132,13 @@
 
 @media (min-width: 768px) {
   #wrapper {
-    padding-left: 250px; }
+    padding-left: 120px; }
 
   #wrapper.toggled {
     padding-left: 0; }
 
   #sidebar-wrapper {
-    width: 250px; }
+    width: 120px; }
 
   #wrapper.toggled #sidebar-wrapper {
     width: 0; }
@@ -111,4 +162,120 @@
   -o-background-size: cover;
   background-size: cover; }
 
-/*# sourceMappingURL=site-theme.css.map */
+.m-top {
+  margin-top: 30px; }
+
+.m-top-lg {
+  margin-top: 60px; }
+
+.m-bottom {
+  margin-bottom: 30px; }
+
+.m-bottom-lg {
+  margin-bottom: 60px; }
+
+.m-left {
+  margin-left: 30px; }
+
+.m-left-lg {
+  margin-left: 60px; }
+
+.m-right {
+  margin-right: 30px; }
+
+.m-right-lg {
+  margin-right: 60px; }
+
+.p-top {
+  padding-top: 30px; }
+
+.p-top-lg {
+  padding-top: 60px; }
+
+.p-bottom {
+  padding-bottom: 30px; }
+
+.p-bottom-lg {
+  padding-bottom: 60px; }
+
+.p-left {
+  padding-left: 30px; }
+
+.p-left-lg {
+  padding-left: 60px; }
+
+.p-right {
+  padding-right: 30px; }
+
+.p-right-lg {
+  padding-right: 60px; }
+
+.m-all {
+  margin: 30px; }
+
+.p-all {
+  padding: 30px; }
+
+@media (min-width: 1200px) {
+  .pull-left-lg {
+    float: left !important; } }
+
+@media (min-width: 992px) {
+  .pull-left-md {
+    float: left !important; } }
+
+@media (min-width: 768px) {
+  .pull-left-sm {
+    float: left !important; } }
+
+@media (min-width: 480px) {
+  .pull-left-xs {
+    float: left !important; } }
+
+@media (min-width: 1200px) {
+  .pull-right-lg {
+    float: right !important; } }
+
+@media (min-width: 992px) {
+  .pull-right-md {
+    float: right !important; } }
+
+@media (min-width: 768px) {
+  .pull-right-sm {
+    float: right !important; } }
+
+@media (min-width: 480px) {
+  .pull-right-xs {
+    float: right !important; } }
+
+@media (min-width: 1200px) {
+  .text-left-lg {
+    text-align: left; } }
+
+@media (min-width: 992px) {
+  .text-left-md {
+    text-align: left; } }
+
+@media (min-width: 768px) {
+  .text-left-sm {
+    text-align: left; } }
+
+@media (min-width: 480px) {
+  .text-left-xs {
+    text-align: left; } }
+
+@media (min-width: 1200px) {
+  .text-right-lg {
+    text-align: right; } }
+
+@media (min-width: 992px) {
+  .text-right-md {
+    text-align: right; } }
+
+@media (min-width: 768px) {
+  .text-right-sm {
+    text-align: right; } }
+
+@media (min-width: 480px) {
+  .text-right-xs {
+    text-align: right; } }

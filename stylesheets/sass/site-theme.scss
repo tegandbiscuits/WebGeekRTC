@@ -1,3 +1,86 @@
+//
+// Load core variables and mixins
+// --------------------------------------------------
+@import "_variables.scss";
+@import "bootstrap/_mixins.scss";
+
+
+
+
+
+// ================================================== */
+// ==/ Globals /================================================ */
+// ================================================== */
+
+
+
+//
+// Icons
+// -------------------------------------
+
+// Bordered & Pulled
+.glyphicon-border {
+  padding: .2em .25em .15em;
+  border: solid .08em $text-color;
+  border-radius: .1em;
+}
+
+.glyphicon-pull-left { float: left; }
+.glyphicon-pull-right { float: right; }
+
+.glyphicon {
+  &.glyphicon-pull-left { margin-right: .3em; }
+  &.glyphicon-pull-right { margin-left: .3em; }
+}
+
+// Custom sizes
+$size-list: 1 2 3 4 5 6;
+@each $value in $size-list {
+  $i: index($size-list, $value);
+  .glyphicon-x#{$i} { 
+      font-size: #{$value}em;
+  }
+}
+.glyphicons-lg {font-size: 1.5em;}
+
+
+
+
+
+
+
+//
+// Navigation
+// -------------------------------------
+.top-navigation {
+  width: 100%;
+  z-index: 1031;
+}
+
+
+
+
+
+
+//
+// Video call participants
+// -------------------------------------
+.video-call-participants {
+  visibility: hidden; // avoid pushing down the content before affix is applied
+  &.affix {
+    visibility: visible;
+    bottom: 0;
+    width: 100%;
+  }
+
+  [class^="container"] > .row > [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -15,16 +98,16 @@
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 120px;
 }
 
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
+    left: 120px;
     width: 0;
     height: 100%;
-    margin-left: -250px;
+    margin-left: -120px;
     overflow-y: auto;
     background: #000;
     -webkit-transition: all 0.5s ease;
@@ -34,7 +117,7 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 120px;
 }
 
 #page-content-wrapper {
@@ -45,7 +128,7 @@
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -120px;
 }
 
 /* Sidebar Styles */
@@ -53,14 +136,13 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 120px;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
     line-height: 40px;
 }
 
@@ -68,6 +150,7 @@
     display: block;
     text-decoration: none;
     color: #999999;
+    padding: 0 15px;
 }
 
 .sidebar-nav li a:hover {
@@ -98,7 +181,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 120px;
     }
 
     #wrapper.toggled {
@@ -106,7 +189,7 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 120px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -140,4 +223,75 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+
+
+
+/// ================================================== */
+// ==/ MISC /================================================ */
+// ================================================== */
+
+// Custom spacing
+$spacing-list: (
+  m    top       margin           $grid-gutter-width,
+  m    bottom    margin        $grid-gutter-width,
+  m    left      margin          $grid-gutter-width,
+  m    right     margin         $grid-gutter-width,
+  p    top       padding           $grid-gutter-width,
+  p    bottom    padding        $grid-gutter-width,
+  p    left      padding          $grid-gutter-width,
+  p    right     padding         $grid-gutter-width,
+);
+@each $value in $spacing-list {
+  .#{nth($value, 1)}-#{nth($value, 2)} {
+    #{nth($value, 3)}-#{nth($value, 2)}: nth($value, 4);
+  }
+  .#{nth($value, 1)}-#{nth($value, 2)}-lg {
+      #{nth($value, 3)}-#{nth($value, 2)}: (nth($value, 4) * 2);
+    }
+}
+.m-all {
+  margin: $grid-gutter-width;
+}
+.p-all {
+  padding: $grid-gutter-width;
+}
+
+// Custom floats
+$float-list: (
+  left    lg     $screen-lg,
+  left    md     $screen-md,
+  left    sm     $screen-sm,
+  left    xs     $screen-xs,
+  right   lg     $screen-lg,
+  right   md     $screen-md,
+  right   sm     $screen-sm,
+  right   xs     $screen-xs
+);
+@each $value in $float-list {
+  .pull-#{nth($value, 1)}-#{nth($value, 2)} {
+    @media (min-width: nth($value, 3) ) {
+      float: nth($value, 1) !important;
+    }
+  }
+}
+
+// Custom text align
+$align-list: (
+  left    lg     $screen-lg,
+  left    md     $screen-md,
+  left    sm     $screen-sm,
+  left    xs     $screen-xs,
+  right   lg     $screen-lg,
+  right   md     $screen-md,
+  right   sm     $screen-sm,
+  right   xs     $screen-xs
+);
+@each $value in $align-list {
+  .text-#{nth($value, 1)}-#{nth($value, 2)} {
+    @media (min-width: nth($value, 3) ) {
+      text-align: nth($value, 1);
+    }
+  }
 }
