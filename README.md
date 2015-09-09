@@ -9,13 +9,10 @@
 
 ### How do I get set up? ###
 
-* Summary of set up
+* #Summary of set up#
 * Compile your SASS by running this command from your root project folder:
 - `sass --watch stylesheets/sass:stylesheets`
 * Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
 
 ### Contribution guidelines ###
 
