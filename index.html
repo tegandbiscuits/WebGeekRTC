@@ -12,18 +12,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="stylesheets/bootstrap.css">
-    <!-- 
-      If you would rather use vanilla Bootstrap uncomment the below line and remove the above line
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
-    -->
-
     <!-- Custom CSS -->
     <link href="stylesheets/site-theme.css" rel="stylesheet">
 
-    <script src="javascripts/libs/modernizr-2.8.3.min.js"></script>
-    <script src="javascripts/libs/respond.min.js"></script>
+    <script src="javascripts/modernizr-2.8.3.min.js"></script>
+    <script src="javascripts/respond.min.js"></script>
 
   </head>
   <body>
@@ -32,31 +25,31 @@
     <![endif]-->
 
     <!-- Navigation -->
-    <nav class="top-navigation" data-spy="affix">
+    <nav id="controls" class="top-navigation top fixedsticky">
         <div class="container text-center">
           <div class="btn-group btn-group-lg">
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-user"></i>
+              <i class="fa fa-user"></i>
               <span class="sr-only">Invite people</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-volume-off"></i>
+              <i class="fa fa-volume-off"></i>
               <span class="sr-only">Mute microphone</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-facetime-video"></i>
+              <i class="fa fa-video-camera"></i>
               <span class="sr-only">Turn camera Off</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-signal"></i>
+              <i class="fa fa-signal"></i>
               <span class="sr-only">Adjust bandwidth usage</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-cog"></i>
+              <i class="fa fa-cog"></i>
               <span class="sr-only">Settings</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="glyphicon glyphicon-earphone"></i>
+              <i class="fa fa-earphone"></i>
               <span class="sr-only">Leave call</span>
             </button>
           </div>
@@ -75,38 +68,38 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" role="button" data-container="body" data-toggle="popover" data-placement="right" data-content="Open chat window">
-                      <i class="glyphicon glyphicon-comment glyphicon-x2 glyphicon-border"></i>
+                    <a href="#" role="button">
+                      <i class="fa fa-comment fa-x2"></i>
                       <span class="sr-only">Chat</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-container="body" data-toggle="popover" data-placement="right" data-content="Start screen sharing">
-                      <i class="glyphicon glyphicon-blackboard glyphicon-x2 glyphicon-border"></i>
+                    <a href="#">
+                      <i class="fa fa-desktop fa-x2"></i>
                       <span class="sr-only">Screen Share</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-container="body" data-toggle="popover" data-placement="right" data-content="Take a picture">
-                      <i class="glyphicon glyphicon-camera glyphicon-x2 glyphicon-border"></i>
+                    <a href="#">
+                      <i class="fa fa-camera fa-x2"></i>
                       <span class="sr-only">Capture</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-container="body" data-toggle="popover" data-placement="right" data-content="Add cool effects">
-                      <i class="glyphicon glyphicon-cog glyphicon-x2 glyphicon-border"></i>
+                    <a href="#">
+                      <i class="fa fa-cog fa-x2"></i>
                       <span class="sr-only">Effects</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-container="body" data-toggle="popover" data-placement="right" data-content="Record video">
-                      <i class="glyphicon glyphicon-film glyphicon-x2 glyphicon-border"></i>
+                    <a href="#">
+                      <i class="fa fa-film fa-x2"></i>
                       <span class="sr-only">Video</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-container="body" data-toggle="popover" data-placement="right" data-content="Load more apps">
-                      <i class="glyphicon glyphicon-option-horizontal glyphicon-x2 glyphicon-border"></i>
+                    <a href="#">
+                      <i class="fa fa-ellipsis-h fa-x2"></i>
                       <span class="sr-only">Apps</span>
                     </a>
                 </li>
@@ -132,16 +125,16 @@
     </div>
     <!-- /#wrapper -->
 
-    <div class="video-call-participants" data-spy="affix">
+    <div id="participants" class="video-call-participants bottom fixedsticky">
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-2 pull-right">
-            <a href="#" class="thumbnail" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            <a href="#" class="thumbnail" role="button">
               <img src="http://dummyimage.com/180x100/000/fff" alt="Participant">
             </a>
           </div>
           <div class="col-xs-1 pull-right">
-            <a href="#" class="thumbnail" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            <a href="#" class="thumbnail" role="button">
               <img src="http://dummyimage.com/100x100/000/fff" alt="me">
             </a>
           </div>
@@ -152,7 +145,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="javascripts/libs/jquery-1.11.3.min.js"><\/script>')</script>
 
-    <script src="javascripts/libs/bootstrap.min.js"></script>
+    <script src="javascripts/plugins.min.js"></script>
     <script src="javascripts/scripts.js"></script>
 
     <!-- Menu Toggle Script -->
@@ -162,8 +155,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
   </body>
 </html>

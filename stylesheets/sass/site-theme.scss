@@ -2,10 +2,15 @@
 //
 // Load core variables and mixins
 // --------------------------------------------------
-@import "_variables.scss";
-@import "bootstrap/_mixins.scss";
+// @import "_variables.scss";
+$body-bg:             transparent !default;
+$fa-font-path:        "fonts" !default;
+
+@import "bootstrap";
+@import "font-awesome";
+
 // Custom classes for dark theme
-@import "_bootswatch.scss";
+// @import "_bootswatch.scss";
 
 
 
@@ -21,33 +26,75 @@
 // -------------------------------------
 
 // Bordered & Pulled
-.glyphicon-border {
+.fa-border {
   padding: .2em .25em .15em;
-  border: solid .08em $text-color;
+  border: solid .08em $body-color;
   border-radius: .1em;
 }
 
-.glyphicon-pull-left { float: left; }
-.glyphicon-pull-right { float: right; }
+.fa-pull-left { float: left; }
+.fa-pull-right { float: right; }
 
-.glyphicon {
-  &.glyphicon-pull-left { margin-right: .3em; }
-  &.glyphicon-pull-right { margin-left: .3em; }
+.fa {
+  &.fa-pull-left { margin-right: .3em; }
+  &.fa-pull-right { margin-left: .3em; }
 }
 
 // Custom sizes
 $size-list: 1 2 3 4 5 6;
 @each $value in $size-list {
   $i: index($size-list, $value);
-  .glyphicon-x#{$i} { 
+  .fa-x#{$i} { 
       font-size: #{$value}em;
   }
 }
-.glyphicons-lg {font-size: 1.5em;}
+.fa-lg {font-size: 1.5em;}
 
 
 
 
+
+//
+// Sticky
+// -------------------------------------
+html, body {
+  height: 100%;
+}
+
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+.fixedsticky-dummy {
+  display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+
+.top, .bottom {
+  width: 100%;
+  position: absolute;
+  z-index: 1030;
+}
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
+}
 
 
 
@@ -56,25 +103,18 @@ $size-list: 1 2 3 4 5 6;
 // -------------------------------------
 .top-navigation {
   width: 100%;
-  z-index: 1031;
 }
 
 
 
-
+ 
 
 
 //
 // Video call participants
 // -------------------------------------
 .video-call-participants {
-  visibility: hidden; // avoid pushing down the content before affix is applied
-  &.affix {
-    visibility: visible;
-    bottom: 0;
-    width: 100%;
-  }
-
+  width: 100%;
   [class^="container"] > .row > [class^="col-"] {
     padding-left: 0;
     padding-right: 0;
@@ -262,14 +302,14 @@ $spacing-list: (
 
 // Custom floats
 $float-list: (
-  left    lg     $screen-lg,
-  left    md     $screen-md,
-  left    sm     $screen-sm,
-  left    xs     $screen-xs,
-  right   lg     $screen-lg,
-  right   md     $screen-md,
-  right   sm     $screen-sm,
-  right   xs     $screen-xs
+  left    lg     1200px,
+  left    md     992px,
+  left    sm     768px,
+  left    xs     544px,
+  right   lg     1200px,
+  right   md     992px,
+  right   sm     768px,
+  right   xs     544px
 );
 @each $value in $float-list {
   .pull-#{nth($value, 1)}-#{nth($value, 2)} {
@@ -281,14 +321,14 @@ $float-list: (
 
 // Custom text align
 $align-list: (
-  left    lg     $screen-lg,
-  left    md     $screen-md,
-  left    sm     $screen-sm,
-  left    xs     $screen-xs,
-  right   lg     $screen-lg,
-  right   md     $screen-md,
-  right   sm     $screen-sm,
-  right   xs     $screen-xs
+  left    lg     1200px,
+  left    md     992px,
+  left    sm     768px,
+  left    xs     544px,
+  right   lg     1200px,
+  right   md     992px,
+  right   sm     768px,
+  right   xs     544px
 );
 @each $value in $align-list {
   .text-#{nth($value, 1)}-#{nth($value, 2)} {

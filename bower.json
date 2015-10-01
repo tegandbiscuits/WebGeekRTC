@@ -18,6 +18,15 @@
   ],
   "dependencies": {
     "bootstrap": "v4-dev",
-    "font-awesome": "fontawesome#~4.4.0"
+    "font-awesome": "fontawesome#~4.4.0",
+    "filament-sticky": "~0.1.6"
+  },
+  "overrides": {
+      "jquery": {
+          "ignore": true
+      },
+      "qunit": {
+          "ignore": true
+      }
   }
 }
