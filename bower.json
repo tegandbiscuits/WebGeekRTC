@@ -1,0 +1,23 @@
+{
+  "name": "WG-Project",
+  "version": "0.0.0",
+  "authors": [
+    "oktalk <justin.itrace@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4-dev",
+    "font-awesome": "fontawesome#~4.4.0"
+  }
+}
