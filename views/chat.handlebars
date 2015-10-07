@@ -17,6 +17,7 @@
 
     <script src="/javascripts/modernizr-2.8.3.min.js"></script>
     <script src="/javascripts/respond.min.js"></script>
+		<script src="/javascripts/peer.min.js"></script>
 
   </head>
   <body>
@@ -29,27 +30,31 @@
         <div class="container text-center">
           <div class="btn-group btn-group-lg">
             <button type="button" class="btn btn-default">
-              <i class="fa fa-user"></i>
-              <span class="sr-only">Invite people</span>
-            </button>
-            <button type="button" class="btn btn-default">
-              <i class="fa fa-volume-off"></i>
-              <span class="sr-only">Mute microphone</span>
+              <i class="fa fa-comment"></i>
+              <span class="sr-only">Toggle text</span>
             </button>
             <button type="button" class="btn btn-default">
               <i class="fa fa-video-camera"></i>
-              <span class="sr-only">Turn camera Off</span>
+              <span class="sr-only">Toggle camera</span>
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-microphone"></i>
+              <span class="sr-only">Toggle microphone</span>
+            </button>
+            <button type="button" class="btn btn-default">
+              <i class="fa fa-volume-off"></i>
+              <span class="sr-only">Mute call</span>
             </button>
             <button type="button" class="btn btn-default">
               <i class="fa fa-signal"></i>
-              <span class="sr-only">Adjust bandwidth usage</span>
+              <span class="sr-only">Connection strength</span>
+            </button>
+            <button type="button" id="call" class="btn btn-default">
+              <i class="fa fa-phone"></i>
+              <span class="sr-only">Make call</span>
             </button>
             <button type="button" class="btn btn-default">
-              <i class="fa fa-cog"></i>
-              <span class="sr-only">Settings</span>
-            </button>
-            <button type="button" class="btn btn-default">
-              <i class="fa fa-earphone"></i>
+              <i class="fa fa-sign-out"></i>
               <span class="sr-only">Leave call</span>
             </button>
           </div>
@@ -112,10 +117,8 @@
           <div class="container-fluid">
               <div class="row">
                   <div class="col-lg-12">
-                      <h1>Simple Hangout</h1>
-                      <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                      <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                      <!--a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a-->
+											<video id="call-cam" autoplay></video>
                   </div>
               </div>
           </div>
@@ -129,9 +132,10 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-2 pull-right">
-            <a href="#" class="thumbnail" role="button">
+            <!--a href="#" class="thumbnail" role="button">
               <img src="http://dummyimage.com/180x100/000/fff" alt="Participant">
-            </a>
+            </a-->
+						<video id="my-cam" width="180" height="100" autoplay></video>
           </div>
           <div class="col-xs-1 pull-right">
             <a href="#" class="thumbnail" role="button">
