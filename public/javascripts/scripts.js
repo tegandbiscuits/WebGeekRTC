@@ -25,15 +25,37 @@ $(function () {
 
 
 	$("#call").click(function() {
+		// this is for the caller
 		var connectPeer = prompt("Enter ID to connect to");
 		var call = peer.call(connectPeer, myFeed);
+		var dataConn = peer.connect(connectPeer);
 		displayCall(call);
+		canHangup(call);
+
+		dataConn.on("data", function(data) {
+			console.log(data);
+		});
+
+		$("#textchat").click(function() {
+			dataConn.send("Hello world");
+		});
 	});
 
 	peer.on("call", function(call) {
+		// this is for the called
 		console.log("Getting a call");
 		call.answer(myFeed);
 		displayCall(call);
+		canHangup(call);
+		peer.on("connection", function(dataConn) {
+			dataConn.on("data", function(data) {
+				console.log(data);
+			});
+
+			$("#textchat").click(function() {
+				dataConn.send("Hey Buddy");
+			});
+		});
 	});
 
 	function displayCall(call) {
@@ -44,6 +66,16 @@ $(function () {
 				callCam.play();
 			};
 		});
+	}
+
+	function canHangup(call) {
+		$("#hangup").click(function() {
+			call.close();
+		});
+	}
+
+	function sendMessage(dataConn, msg) {
+		dataConn.send(msg);
 	}
 
 	peer.on("error", function(err) {
