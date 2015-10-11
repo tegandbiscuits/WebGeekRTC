@@ -1,5 +1,4 @@
 $(function () {
-  $('[data-toggle="popover"]').popover();
 
 	var peerId = prompt("Enter an ID");
 	var peer = new Peer(peerId, {key: "vpzfzavxowjc3di"});
