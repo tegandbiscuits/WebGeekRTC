@@ -7,8 +7,8 @@ var gulp           = require('gulp'), 
     bower          = require('gulp-bower');
 
 var config = {
-     sassPath: './stylesheets/sass',
-    jsPath:   './javascripts/libs',
+     sassPath: './public/stylesheets/sass',
+    jsPath:   './public/javascripts/libs',
      bowerDir: './bower_components' 
 }
 
@@ -19,14 +19,14 @@ gulp.task('bower', function() { 
 
 gulp.task('icons', function() { 
     return gulp.src(config.bowerDir + '/font-awesome/fonts/**.*') 
-        .pipe(gulp.dest('./stylesheets/fonts')); 
+        .pipe(gulp.dest('./public/stylesheets/fonts')); 
 });
 
 gulp.task('javascripts', function() {
   // var bowerFiles = mainBowerFiles('**/*.js');
   // console.log('bower files: ', bowerFiles);
     return gulp.src( mainBowerFiles('**/*.js') )
-        .pipe(gulp.dest('./javascripts/libs/'))
+        .pipe(gulp.dest('./public/javascripts/libs/'))
 });
 
 gulp.task('compile-css', function() { 
@@ -34,7 +34,7 @@ gulp.task('compile-css', function() { 
          .pipe(sass({
              style: 'compressed',
              loadPath: [
-                 './stylesheets/sass',
+                 './public/stylesheets/sass',
                  config.bowerDir + '/bootstrap/scss',
                  config.bowerDir + '/font-awesome/scss',
              ]
@@ -42,14 +42,14 @@ gulp.task('compile-css', function() { 
             .on("error", notify.onError(function (error) {
                  return "Error: " + error.message;
              }))) 
-         .pipe(gulp.dest('./stylesheets')); 
+         .pipe(gulp.dest('./public/stylesheets')); 
 });
 
 gulp.task('minify-js', function () {
-    return gulp.src('./javascripts/libs/*.js') // path to your files
+    return gulp.src('./public/javascripts/libs/*.js') // path to your files
         .pipe(uglify())
-        .pipe(concat('plugins.min.js'))
-        .pipe(gulp.dest('./javascripts/'));
+        .pipe(concat('/plugins.min.js'))
+        .pipe(gulp.dest('./public/javascripts/'));
 });
 
 // Rerun the task when a file changes
